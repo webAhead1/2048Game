@@ -1,12 +1,21 @@
 import "./App.css";
 import React from "react";
 import GameFrame from "./components/frame/GameFrame";
+import Heading from "./components/Heading/Heading";
+import LogOut from "./components/LogOut/LogOut";
 
 function App() {
   return (
-    <div className="App">
-      <GameFrame />
-    </div>
+    <main className="App">
+        
+          <Heading />
+       
+    
+          <GameFrame />
+          <LogOut />
+   
+    
+    </main>
   );
 }
 

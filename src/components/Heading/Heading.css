@@ -1,0 +1,21 @@
+.Heading{
+  position:relative;
+  flex-basis: 20rem;
+  flex-grow: 1;
+  padding: 2rem;
+  top: 5px;
+  left: 10px;
+
+}
+.Player-Name{
+  top: 5px;
+}
+.Game-Name{
+  position:absolute;
+  top: 5px;
+  right: 50%;
+  padding: 1rem;
+  font-size:x-large;
+  font-weight: bold;
+
+}
