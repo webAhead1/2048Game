@@ -11,8 +11,11 @@ function GameFrame(props) {
         console.log(event.key);
         props.updateNumbers(keyHandlers.arrowDown(props.numbers));
       }
-      console.log("key down");
+      else if (event.key=="ArrowUp"){
+        props.updateNumbers(keyHandlers.arrowUp(props.numbers));
+      }
     };
+
     window.addEventListener("keydown", handleKeyDown);
 
     const cleanup = () => {

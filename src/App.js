@@ -8,7 +8,7 @@ let rowRand = Math.floor(Math.random() * 4);
 let colRand = Math.floor(Math.random() * 4);
 
 let initialNumbers = [
-  [2, 0, 2, 0],
+  [2, 2, 2, 0],
   [2, 0, 2, 0],
   [0, 0, 2, 0],
   [0, 0, 2, 0],
