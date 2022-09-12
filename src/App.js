@@ -9,9 +9,9 @@ let colRand = Math.floor(Math.random() * 4);
 
 let initialNumbers = [
   [2, 0, 2, 0],
-  [2, 0, 0, 0],
+  [2, 0, 2, 0],
   [0, 0, 2, 0],
-  [0, 0, 0, 0],
+  [0, 0, 2, 0],
 ];
 
 initialNumbers[rowRand][colRand] = 2;
