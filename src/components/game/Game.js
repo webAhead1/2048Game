@@ -1,12 +1,28 @@
 import React from "react";
 import keyHandlers from "../../utils/keyHandler";
+import addRandomCell from "../../utils/gameUtils";
 import "./frameStyle.css";
 
 let cellId = 0;
 
 function GameFrame(props) {
+  React.useEffect(() =>{
+  
+let initialNumbers = [
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
+];
+
+initialNumbers=addRandomCell(initialNumbers);
+initialNumbers=addRandomCell(initialNumbers);
+props.updateNumbers(initialNumbers);
+  } ,[])
+
   React.useEffect(() => {
     const handleKeyDown = (event) => {
+      
       if (event.key === "ArrowDown") {
         console.log(event.key);
         props.updateNumbers(keyHandlers.arrowDown(props.numbers));
@@ -14,6 +30,16 @@ function GameFrame(props) {
       else if (event.key=="ArrowUp"){
         props.updateNumbers(keyHandlers.arrowUp(props.numbers));
       }
+      else if(event.key=="ArrowRight"){
+        props.updateNumbers(keyHandlers.arrowRight(props.numbers));
+      }
+      else if(event.key=="ArrowLeft"){
+        props.updateNumbers(keyHandlers.arrowLeft(props.numbers));
+      }
+      if(event.key === "ArrowDown"||event.key=="ArrowUp"||event.key=="ArrowRight"||event.key=="ArrowLeft"){
+        props.updateNumbers(addRandomCell(props.numbers));
+      }
+
     };
 
     window.addEventListener("keydown", handleKeyDown);
