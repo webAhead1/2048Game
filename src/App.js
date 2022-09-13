@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import GameFrame from "./components/frame/GameFrame";
+import Game from "./components/game/Game";
 import Heading from "./components/Heading/Heading";
 import LogOut from "./components/LogOut/LogOut";
 
@@ -23,7 +23,7 @@ function App() {
     <main className="App">
       <Heading />
 
-      <GameFrame numbers={numbers} updateNumbers={updateNumbers} />
+      <Game numbers={numbers} updateNumbers={updateNumbers} />
       <LogOut />
     </main>
   );

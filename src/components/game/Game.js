@@ -1,5 +1,5 @@
 import React from "react";
-import keyHandlers from "../../scripts/keyHandler";
+import keyHandlers from "../../utils/keyHandler";
 import "./frameStyle.css";
 
 let cellId = 0;
