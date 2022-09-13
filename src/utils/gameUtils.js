@@ -19,4 +19,34 @@ function addRandomCell(numbers){
     return nums;
 }
 
-export default addRandomCell;
+function hasMoreSteps(numbers){
+    for(let row=0 ;row < 4; row ++){
+        for(let col=0 ; col < 3; col++){
+            if(numbers[row][col]===numbers[row][col+1])
+                return true;
+        }
+    }
+    for(let col=0 ;col< 4; col ++){
+        for(let row=0 ; row < 3; row++){
+            if(numbers[row][col]===numbers[row+1][col])
+                return true;
+        }
+    }
+    return false;
+}
+
+function gameWon(numbers){
+    for(let row=0 ;row < 4; row ++){
+        for(let col=0 ; col < 4; col++){
+            if(numbers[row][col]===2048)
+                return true;
+        }
+    }
+    return false;
+}
+export default {
+    addRandomCell: addRandomCell,
+    getEmptyCells: getEmptyCells,
+    hasMoreSteps: hasMoreSteps,
+    gameWon: gameWon,
+} 

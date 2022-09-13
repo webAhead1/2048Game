@@ -1,10 +1,11 @@
 import React from "react";
 import keyHandlers from "../../utils/keyHandler";
-import addRandomCell from "../../utils/gameUtils";
+import gameUtils from "../../utils/gameUtils";
 import "./frameStyle.css";
 
 let cellId = 0;
-
+let gameOver= false;
+let gameWon= false;
 function GameFrame(props) {
   React.useEffect(() =>{
   
@@ -15,8 +16,8 @@ let initialNumbers = [
   [0, 0, 0, 0],
 ];
 
-initialNumbers=addRandomCell(initialNumbers);
-initialNumbers=addRandomCell(initialNumbers);
+initialNumbers=gameUtils.addRandomCell(initialNumbers);
+initialNumbers=gameUtils.addRandomCell(initialNumbers);
 props.updateNumbers(initialNumbers);
   } ,[])
 
@@ -36,9 +37,17 @@ props.updateNumbers(initialNumbers);
       else if(event.key=="ArrowLeft"){
         props.updateNumbers(keyHandlers.arrowLeft(props.numbers));
       }
-      if(event.key === "ArrowDown"||event.key=="ArrowUp"||event.key=="ArrowRight"||event.key=="ArrowLeft"){
-        props.updateNumbers(addRandomCell(props.numbers));
+      if(gameUtils.gameWon(props.numbers)){
+        gameWon=true;
       }
+      if(gameUtils.getEmptyCells(props.numbers).length===0){
+        if(!gameUtils.hasMoreSteps(props.numbers))
+            gameOver=true;
+      }
+      else if(event.key === "ArrowDown"||event.key=="ArrowUp"||event.key=="ArrowRight"||event.key=="ArrowLeft"){
+        props.updateNumbers(gameUtils.addRandomCell(props.numbers));
+      }
+
 
     };
 
@@ -51,6 +60,8 @@ props.updateNumbers(initialNumbers);
   });
 
   return (
+    gameWon ? <h1>Game Won</h1>:
+    gameOver ? <h1>Game Over</h1> :
     <div className="gameFrame">
       {props.numbers.map((row) =>
         row.map((number) => (
