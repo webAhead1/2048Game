@@ -2,6 +2,7 @@ import React from "react";
 import keyHandlers from "../../utils/keyHandler";
 import gameUtils from "../../utils/gameUtils";
 import "./frameStyle.css";
+import Message from "../message/Message";
 
 let cellId = 0;
 let gameOver= false;
@@ -10,10 +11,10 @@ function GameFrame(props) {
   React.useEffect(() =>{
   
 let initialNumbers = [
-  [0, 0, 0, 0],
-  [0, 0, 0, 0],
-  [0, 0, 0, 0],
-  [0, 0, 0, 0],
+  [1, 2, 3, 4],
+  [3, 5, 6, 5],
+  [0, 0, 8, 11],
+  [3, 7, 9, 7],
 ];
 
 initialNumbers=gameUtils.addRandomCell(initialNumbers);
@@ -60,8 +61,8 @@ props.updateNumbers(initialNumbers);
   });
 
   return (
-    gameWon ? <h1>Game Won</h1>:
-    gameOver ? <h1>Game Over</h1> :
+    gameWon ? <Message Message="Game Won" />:
+    gameOver ? <Message Message="Game Over" /> :
     <div className="gameFrame">
       {props.numbers.map((row) =>
         row.map((number) => (
