@@ -3,7 +3,7 @@ import "./LogOut.css";
 
 function LogOut() {
   return (
-    <a className="restart-button" href="/">
+    <a className="logOut-button" href="/">
       Log Out
     </a>
   );

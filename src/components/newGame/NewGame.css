@@ -1,7 +1,7 @@
-.logOut-button {
+.restart-button {
   position: absolute;
   right: 2%;
-  top: 50px;
+  top: 120px;
   padding: 2rem;
   flex-basis: 20rem;
   flex-grow: 1;

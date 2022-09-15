@@ -2,25 +2,26 @@
   width: 500px;
   height: 500px;
   border: solid 5px #c97777;
-  margin-top: 50px;
-  margin-left: 30%;
+  /* margin-top: 50px;
+  margin-left: 30%; */
+  margin: 0 auto;
   padding: 25px;
   display: grid;
   grid-template-columns: auto auto auto auto;
   background-color: #d9d9d9;
-  
 }
 .cell {
-  width: 100px;
-  height: 100px;
+  width: 115px;
+  height: 115px;
   border: solid 5px #c97777;
   background-color: #f7ecde;
 }
-.cellNumber{
-  padding:45%;
-  top:35%;
+.cellNumber {
+  top: 35%;
   position: relative;
   font-size: 200%;
   font-family: Arial, Helvetica, sans-serif;
   color: brown;
+  justify-content: center;
+  display: flex;
 }
