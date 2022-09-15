@@ -9,16 +9,7 @@ let gameOver = false;
 let gameWon = false;
 function GameFrame(props) {
   React.useEffect(() => {
-    let initialNumbers = [
-      [1024, 0, 0, 0],
-      [0, 0, 0, 0],
-      [0, 0, 0, 0],
-      [0, 0, 0, 0],
-    ];
-
-    initialNumbers = gameUtils.addRandomCell(initialNumbers);
-    initialNumbers = gameUtils.addRandomCell(initialNumbers);
-    props.updateNumbers(initialNumbers);
+    props.updateNumbers(gameUtils.startNewGame());
   }, []);
 
   React.useEffect(() => {
