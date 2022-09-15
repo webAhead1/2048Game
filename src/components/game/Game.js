@@ -47,23 +47,19 @@ function GameFrame(props) {
     return cleanup;
   });
 
-  return (
-    <div className={props.gameState}>
-      <Message style="loseMessage" gameState={props.gameState}>
-        Game Over
-      </Message>
-      <Message style="winMessage" gameState={props.gameState}>
-        Game Won
-      </Message>
-      <div className="gameFrame">
-        {props.numbers.map((row) =>
-          row.map((number) => (
-            <div className="cell" key={cellId++}>
-              <label className="cellNumber">{number > 0 ? number : null}</label>
-            </div>
-          ))
-        )}
-      </div>
+  return props.gameState === "gameWon" ? (
+    <Message style="winMessage">Game Won</Message>
+  ) : props.gameState === "gameOver" ? (
+    <Message style="loseMessage">Game Over</Message>
+  ) : (
+    <div className="gameFrame">
+      {props.numbers.map((row) =>
+        row.map((number) => (
+          <div className="cell" key={cellId++}>
+            <label className="cellNumber">{number > 0 ? number : null}</label>
+          </div>
+        ))
+      )}
     </div>
   );
 }
