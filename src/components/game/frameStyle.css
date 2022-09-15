@@ -25,3 +25,10 @@
   justify-content: center;
   display: flex;
 }
+
+.hide {
+  opacity: 0.5;
+}
+.container {
+  position: relative;
+}
