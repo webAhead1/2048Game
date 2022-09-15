@@ -11,8 +11,8 @@ function getEmptyCells(numbers) {
 }
 function startNewGame() {
   let initialNumbers = [
-    [1024, 2, 3, 0],
-    [1024, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
     [0, 0, 0, 0],
     [0, 0, 0, 0],
   ];

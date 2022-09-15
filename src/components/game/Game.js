@@ -5,8 +5,7 @@ import "./frameStyle.css";
 import Message from "../message/Message";
 
 let cellId = 0;
-let gameOver = false;
-let gameWon = false;
+
 function GameFrame(props) {
   React.useEffect(() => {
     props.updateNumbers(gameUtils.startNewGame());
@@ -25,10 +24,11 @@ function GameFrame(props) {
         props.updateNumbers(keyHandlers.arrowLeft(props.numbers));
       }
       if (gameUtils.gameWon(props.numbers)) {
-        gameWon = true;
+        props.updateGameState("gameWon");
       }
       if (gameUtils.getEmptyCells(props.numbers).length === 0) {
-        if (!gameUtils.hasMoreSteps(props.numbers)) gameOver = true;
+        if (!gameUtils.hasMoreSteps(props.numbers))
+          props.updateGameState("gameOver");
       } else if (
         event.key === "ArrowDown" ||
         event.key == "ArrowUp" ||
@@ -47,19 +47,23 @@ function GameFrame(props) {
     return cleanup;
   });
 
-  return gameWon ? (
-    <Message style="winMessage">Game Won</Message>
-  ) : gameOver ? (
-    <Message style="loseMessage">Game Over</Message>
-  ) : (
-    <div className="gameFrame">
-      {props.numbers.map((row) =>
-        row.map((number) => (
-          <div className="cell" key={cellId++}>
-            <label className="cellNumber">{number > 0 ? number : null}</label>
-          </div>
-        ))
-      )}
+  return (
+    <div className={props.gameState}>
+      <Message style="loseMessage" gameState={props.gameState}>
+        Game Over
+      </Message>
+      <Message style="winMessage" gameState={props.gameState}>
+        Game Won
+      </Message>
+      <div className="gameFrame">
+        {props.numbers.map((row) =>
+          row.map((number) => (
+            <div className="cell" key={cellId++}>
+              <label className="cellNumber">{number > 0 ? number : null}</label>
+            </div>
+          ))
+        )}
+      </div>
     </div>
   );
 }

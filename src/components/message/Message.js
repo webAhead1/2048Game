@@ -2,6 +2,10 @@ import React from "react";
 import "./Message.scss";
 
 function Message(props) {
-  return <h1 className={props.style}>{props.children}</h1>;
+  return (
+    <div className={props.gameState != "inProgress" ? "show" : "hide"}>
+      <h1 className={props.style}>{props.children}</h1>
+    </div>
+  );
 }
 export default Message;
