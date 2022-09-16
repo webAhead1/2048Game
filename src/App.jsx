@@ -25,6 +25,8 @@ function App() {
       <NewGame
         updateNumbers={updateNumbers}
         updateGameState={updateGameState}
+        updateScore={updateScore}
+        scoreState={scoreState}
       />
     </main>
   );

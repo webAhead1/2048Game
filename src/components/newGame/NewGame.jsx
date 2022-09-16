@@ -9,6 +9,7 @@ function NewGame(props) {
       onClick={(e) => {
         props.updateNumbers(gameUtils.startNewGame());
         props.updateGameState("inProgress");
+        props.updateScore([0, props.scoreState[1]]);
       }}
     >
       New Game
