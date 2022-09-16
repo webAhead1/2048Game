@@ -11,8 +11,8 @@ function getEmptyCells(numbers) {
 }
 function startNewGame() {
   let initialNumbers = [
-    [1024, 0, 0, 0],
-    [1024, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
     [0, 0, 0, 0],
     [0, 0, 0, 0],
   ];
@@ -53,6 +53,7 @@ function gameWon(numbers) {
   }
   return false;
 }
+
 export default {
   addRandomCell: addRandomCell,
   getEmptyCells: getEmptyCells,

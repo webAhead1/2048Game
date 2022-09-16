@@ -3,6 +3,7 @@ import keyHandlers from "../../utils/keyHandler";
 import gameUtils from "../../utils/gameUtils";
 import "./frameStyle.css";
 import Message from "../message/Message";
+import Score from "../../components/score/Score";
 
 let cellId = 0;
 
@@ -14,14 +15,21 @@ function GameFrame(props) {
   React.useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "ArrowDown") {
-        console.log(event.key);
-        props.updateNumbers(keyHandlers.arrowDown(props.numbers));
+        const arr = keyHandlers.arrowDown(props.numbers, props.scoreState[0]);
+        props.updateNumbers(arr.array);
+        props.updateScore([arr.score, props.scoreState[1]]);
       } else if (event.key == "ArrowUp") {
-        props.updateNumbers(keyHandlers.arrowUp(props.numbers));
+        const arr = keyHandlers.arrowUp(props.numbers, props.scoreState[0]);
+        props.updateNumbers(arr.array);
+        props.updateScore([arr.score, props.scoreState[1]]);
       } else if (event.key == "ArrowRight") {
-        props.updateNumbers(keyHandlers.arrowRight(props.numbers));
+        const arr = keyHandlers.arrowRight(props.numbers, props.scoreState[0]);
+        props.updateNumbers(arr.array);
+        props.updateScore([arr.score, props.scoreState[1]]);
       } else if (event.key == "ArrowLeft") {
-        props.updateNumbers(keyHandlers.arrowLeft(props.numbers));
+        const arr = keyHandlers.arrowLeft(props.numbers, props.scoreState[0]);
+        props.updateNumbers(arr.array);
+        props.updateScore([arr.score, props.scoreState[1]]);
       }
       if (gameUtils.gameWon(props.numbers)) {
         props.updateGameState("gameWon");
@@ -37,6 +45,12 @@ function GameFrame(props) {
       ) {
         props.updateNumbers(gameUtils.addRandomCell(props.numbers));
       }
+      if (gameUtils.score(props.numbers) !== props.scoreState[0]) {
+        let newScore = [];
+        newScore.push(gameUtils.score(props.numbers));
+        newScore.push(props.scoreState[1]);
+        props.updateScore(newScore);
+      }
     };
 
     if (props.gameState === "inProgress")
@@ -50,6 +64,7 @@ function GameFrame(props) {
 
   return (
     <div className="container">
+      <Score scoreState={props.scoreState} />
       {props.gameState == "gameWon" ? (
         <Message style="winMessage">Game Won</Message>
       ) : props.gameState == "gameOver" ? (
