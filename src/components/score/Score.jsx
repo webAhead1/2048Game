@@ -13,7 +13,7 @@ function Score(props) {
       </div>
       <div className="high-score">
         <h1>
-          HIGH SCORE
+          BEST
           <br />
           {props.scoreState[1]}
         </h1>
