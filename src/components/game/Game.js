@@ -33,10 +33,13 @@ function GameFrame(props) {
       }
       if (gameUtils.gameWon(props.numbers)) {
         props.updateGameState("gameWon");
+        document.body.style.zoom = "82%";
       }
       if (gameUtils.getEmptyCells(props.numbers).length === 0) {
-        if (!gameUtils.hasMoreSteps(props.numbers))
+        if (!gameUtils.hasMoreSteps(props.numbers)) {
           props.updateGameState("gameOver");
+          document.body.style.zoom = "82%";
+        }
       } else if (
         event.key === "ArrowDown" ||
         event.key == "ArrowUp" ||

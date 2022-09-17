@@ -11,12 +11,12 @@ function getEmptyCells(numbers) {
 }
 function startNewGame() {
   let initialNumbers = [
-    [0, 0, 0, 0],
-    [0, 0, 0, 0],
+    [1024, 0, 0, 0],
+    [1024, 0, 0, 0],
     [0, 0, 0, 0],
     [0, 0, 0, 0],
   ];
-
+  document.body.style.zoom = "95%";
   initialNumbers = addRandomCell(initialNumbers);
   initialNumbers = addRandomCell(initialNumbers);
   return initialNumbers;
