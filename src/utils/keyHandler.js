@@ -1,4 +1,4 @@
-function handleArrowRight(arr) {
+function handleArrowRight(arr, score) {
   const array = [...arr];
   let emptyCellQueue = [];
   let tempCords;
@@ -19,8 +19,9 @@ function handleArrowRight(arr) {
 
   for (let rows = 0; rows < 4; rows++) {
     for (let cols = 0; cols < 3; cols++) {
-      if (array[rows][cols] === array[rows][cols+1]) {
-        array[rows][cols+1] *= 2;
+      if (array[rows][cols] === array[rows][cols + 1]) {
+        array[rows][cols + 1] *= 2;
+        score += array[rows][cols + 1];
         array[rows][cols] = 0;
         cols++;
       }
@@ -42,10 +43,10 @@ function handleArrowRight(arr) {
     emptyCellQueue = [];
   }
 
-  return array;
+  return { array, score };
 }
 
-function handleArrowLeft(arr) {
+function handleArrowLeft(arr, score) {
   const array = [...arr];
   let emptyCellQueue = [];
   let tempCords;
@@ -68,6 +69,7 @@ function handleArrowLeft(arr) {
     for (let cols = 3; cols > 0; cols--) {
       if (array[rows][cols] === array[rows][cols - 1]) {
         array[rows][cols - 1] *= 2;
+        score += array[rows][cols - 1];
         array[rows][cols] = 0;
         cols--;
       }
@@ -88,10 +90,10 @@ function handleArrowLeft(arr) {
     }
     emptyCellQueue = [];
   }
-  return array;
+  return { array, score };
 }
 
-function handleArrowDown(arr) {
+function handleArrowDown(arr, score) {
   const array = [...arr];
   let emptyCellQueue = [];
   let tempCords;
@@ -114,6 +116,7 @@ function handleArrowDown(arr) {
     for (let rows = 0; rows < 3; rows++) {
       if (array[rows][cols] === array[rows + 1][cols]) {
         array[rows + 1][cols] *= 2;
+        score += array[rows + 1][cols];
         array[rows][cols] = 0;
         rows++;
       }
@@ -135,10 +138,10 @@ function handleArrowDown(arr) {
     emptyCellQueue = [];
   }
 
-  return array;
+  return { array, score };
 }
 
-function handleArrowUp(arr) {
+function handleArrowUp(arr, score) {
   const array = [...arr];
   let emptyCellQueue = [];
   let tempCords;
@@ -158,9 +161,10 @@ function handleArrowUp(arr) {
   }
 
   for (let cols = 0; cols < 4; cols++) {
-    for (let rows = 3; rows > 0; rows --) {
+    for (let rows = 3; rows > 0; rows--) {
       if (array[rows][cols] === array[rows - 1][cols]) {
         array[rows - 1][cols] *= 2;
+        score += array[rows - 1][cols];
         array[rows][cols] = 0;
         rows--;
       }
@@ -182,11 +186,11 @@ function handleArrowUp(arr) {
     emptyCellQueue = [];
   }
 
-  return array;
+  return { array, score };
 }
 export default {
   arrowDown: handleArrowDown,
   arrowUp: handleArrowUp,
-  arrowRight:handleArrowRight,
-  arrowLeft:handleArrowLeft,
+  arrowRight: handleArrowRight,
+  arrowLeft: handleArrowLeft,
 };
