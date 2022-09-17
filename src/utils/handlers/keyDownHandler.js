@@ -36,13 +36,6 @@ function handleKeyDown(event, props) {
   ) {
     props.updateNumbers(gameUtils.addRandomCell(props.numbers));
   }
-  // if (gameUtils.score(props.numbers) !== props.scoreState[0]) {
-  //   console.log("never entering");
-  //   let newScore = [];
-  //   newScore.push(gameUtils.score(props.numbers));
-  //   newScore.push(props.scoreState[1]);
-  //   props.updateScore(newScore);
-  // }
 }
 
 export default handleKeyDown;

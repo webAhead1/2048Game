@@ -14,6 +14,15 @@ function GameFrame(props) {
 
   React.useEffect(() => {
     const handleKeyDown = (event) => keyDownHandler(event, props);
+    document.addEventListener("keydown", preventKeyBoardScroll, false);
+
+    function preventKeyBoardScroll(e) {
+      var keys = [32, 33, 34, 35, 37, 38, 39, 40];
+      if (keys.includes(e.keyCode)) {
+        e.preventDefault();
+        return false;
+      }
+    }
 
     if (props.gameState === "inProgress")
       window.addEventListener("keydown", handleKeyDown);

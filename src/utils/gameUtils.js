@@ -16,7 +16,6 @@ function startNewGame() {
     [0, 0, 0, 0],
     [0, 0, 0, 0],
   ];
-  document.body.style.zoom = "95%";
   initialNumbers = addRandomCell(initialNumbers);
   initialNumbers = addRandomCell(initialNumbers);
   return initialNumbers;
@@ -50,12 +49,6 @@ function gameWon(numbers) {
     if (numbers[row].find((element) => element === 2048)) return true;
   }
   return false;
-  //  numbers.forEach((element) => {
-  //    console.log(element);
-  //    console.log(numbers);
-  //    if (element.find((el) => el === 2048)) return true;
-  //  });
-  //  return false;
 }
 
 export default {

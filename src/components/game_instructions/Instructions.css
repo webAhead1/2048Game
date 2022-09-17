@@ -1,14 +1,9 @@
 .Instructions {
   position: relative;
-  /* flex-basis: 20rem; */
-  /* flex-grow: 1; */
-  /* padding: 2rem; */
-  /* top: 5px; */
   text-align: center;
-  border-color: black;
-  border-style: solid;
-  border-radius: 10px;
-  border-width: small;
-  padding: 0px;
+  padding-left: 35%;
+  padding-right: 35%;
+  padding-top: 1%;
   margin: 0px;
+  font-size: larger;
 }
