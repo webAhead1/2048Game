@@ -47,12 +47,17 @@ function hasMoreSteps(numbers) {
 
 function gameWon(numbers) {
   for (let row = 0; row < 4; row++) {
-    for (let col = 0; col < 4; col++) {
-      if (numbers[row][col] === 2048) return true;
-    }
+    if (numbers[row].find((element) => element === 2048)) return true;
   }
   return false;
+  //  numbers.forEach((element) => {
+  //    console.log(element);
+  //    console.log(numbers);
+  //    if (element.find((el) => el === 2048)) return true;
+  //  });
+  //  return false;
 }
+
 export default {
   addRandomCell: addRandomCell,
   getEmptyCells: getEmptyCells,

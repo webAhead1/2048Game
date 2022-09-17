@@ -1,0 +1,14 @@
+.Instructions {
+  position: relative;
+  /* flex-basis: 20rem; */
+  /* flex-grow: 1; */
+  /* padding: 2rem; */
+  /* top: 5px; */
+  text-align: center;
+  border-color: black;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: small;
+  padding: 0px;
+  margin: 0px;
+}
