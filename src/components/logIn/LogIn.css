@@ -3,12 +3,20 @@ html {
   --text: hsl(200, 10%, 25%);
   --bg: hsl(200, 10%, 98%);
 }
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh;
+}
 
 button,
 input {
   display: block;
   border: 1px solid var(--border);
-  padding: 0.5rem;
+
   font: inherit;
   background: none;
   color: inherit;
@@ -18,11 +26,6 @@ label {
   display: block;
   margin-top: 1rem;
   font-weight: bold;
-}
-
-input {
-  width: 100%;
-  margin-top: 0.5rem;
 }
 
 button {

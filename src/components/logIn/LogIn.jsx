@@ -11,29 +11,31 @@ function LogIn(props) {
     event.preventDefault();
   };
   return (
-    <form onSubmit={onSubmit}>
-      <label htmlFor="email">Email</label>
-      <input
-        type="email"
-        name="email"
-        id="email"
-        placeholder="Email"
-        onChange={onChange("email")}
-        value={props.loginData.email}
-      />
+    <div className="login">
+      <form onSubmit={onSubmit}>
+        <label htmlFor="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email"
+          onChange={onChange("email")}
+          value={props.loginData.email}
+        />
 
-      <label htmlFor="password">Password</label>
-      <input
-        type="password"
-        name="password"
-        id="password"
-        placeholder="Password"
-        onChange={onChange("password")}
-        value={props.loginData.password}
-      />
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+          onChange={onChange("password")}
+          value={props.loginData.password}
+        />
 
-      <button type="submit">Log in</button>
-    </form>
+        <button type="submit">Log in</button>
+      </form>
+    </div>
   );
 }
 
