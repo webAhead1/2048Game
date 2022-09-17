@@ -23,7 +23,6 @@ function App() {
         updateScore={updateScore}
       />
       <LogOut />
-      <NewGame updateNumbers={updateNumbers} />
       <Instructions />
       <NewGame
         updateNumbers={updateNumbers}

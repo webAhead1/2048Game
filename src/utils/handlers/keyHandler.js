@@ -8,7 +8,6 @@ function handleArrowRight(arr, score) {
         emptyCellQueue.push({ emptyRow: row, emptyCol: col });
       } else if (array[row][col] !== 0 && emptyCellQueue.length > 0) {
         tempCords = emptyCellQueue.shift();
-        console.log(tempCords);
         array[tempCords.emptyRow][tempCords.emptyCol] = array[row][col];
         array[row][col] = 0;
         emptyCellQueue.push({ emptyRow: row, emptyCol: col });
@@ -34,7 +33,6 @@ function handleArrowRight(arr, score) {
         emptyCellQueue.push({ emptyRow: row, emptyCol: col });
       } else if (array[row][col] !== 0 && emptyCellQueue.length > 0) {
         tempCords = emptyCellQueue.shift();
-        console.log(tempCords);
         array[tempCords.emptyRow][tempCords.emptyCol] = array[row][col];
         array[row][col] = 0;
         emptyCellQueue.push({ emptyRow: row, emptyCol: col });
@@ -56,7 +54,6 @@ function handleArrowLeft(arr, score) {
         emptyCellQueue.push({ emptyRow: row, emptyCol: col });
       } else if (array[row][col] !== 0 && emptyCellQueue.length > 0) {
         tempCords = emptyCellQueue.shift();
-        console.log(tempCords);
         array[tempCords.emptyRow][tempCords.emptyCol] = array[row][col];
         array[row][col] = 0;
         emptyCellQueue.push({ emptyRow: row, emptyCol: col });
@@ -82,7 +79,6 @@ function handleArrowLeft(arr, score) {
         emptyCellQueue.push({ emptyRow: row, emptyCol: col });
       } else if (array[row][col] !== 0 && emptyCellQueue.length > 0) {
         tempCords = emptyCellQueue.shift();
-        console.log(tempCords);
         array[tempCords.emptyRow][tempCords.emptyCol] = array[row][col];
         array[row][col] = 0;
         emptyCellQueue.push({ emptyRow: row, emptyCol: col });
@@ -103,7 +99,6 @@ function handleArrowDown(arr, score) {
         emptyCellQueue.push({ emptyRow: row, emptyCol: col });
       } else if (array[row][col] !== 0 && emptyCellQueue.length > 0) {
         tempCords = emptyCellQueue.shift();
-        console.log(tempCords);
         array[tempCords.emptyRow][tempCords.emptyCol] = array[row][col];
         array[row][col] = 0;
         emptyCellQueue.push({ emptyRow: row, emptyCol: col });
@@ -129,7 +124,6 @@ function handleArrowDown(arr, score) {
         emptyCellQueue.push({ emptyRow: row, emptyCol: col });
       } else if (array[row][col] !== 0 && emptyCellQueue.length > 0) {
         tempCords = emptyCellQueue.shift();
-        console.log(tempCords);
         array[tempCords.emptyRow][tempCords.emptyCol] = array[row][col];
         array[row][col] = 0;
         emptyCellQueue.push({ emptyRow: row, emptyCol: col });
@@ -151,7 +145,6 @@ function handleArrowUp(arr, score) {
         emptyCellQueue.push({ emptyRow: row, emptyCol: col });
       } else if (array[row][col] !== 0 && emptyCellQueue.length > 0) {
         tempCords = emptyCellQueue.shift();
-        console.log(tempCords);
         array[tempCords.emptyRow][tempCords.emptyCol] = array[row][col];
         array[row][col] = 0;
         emptyCellQueue.push({ emptyRow: row, emptyCol: col });
@@ -177,7 +170,6 @@ function handleArrowUp(arr, score) {
         emptyCellQueue.push({ emptyRow: row, emptyCol: col });
       } else if (array[row][col] !== 0 && emptyCellQueue.length > 0) {
         tempCords = emptyCellQueue.shift();
-        console.log(tempCords);
         array[tempCords.emptyRow][tempCords.emptyCol] = array[row][col];
         array[row][col] = 0;
         emptyCellQueue.push({ emptyRow: row, emptyCol: col });
