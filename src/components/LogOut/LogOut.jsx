@@ -1,11 +1,11 @@
 import React from "react";
 import "./LogOut.css";
 
-function LogOut() {
+function LogOut(props) {
   return (
-    <a className="logOut-button" href="/">
+    <button className="logOut-button" onClick={() => props.updatePage("login")}>
       Log Out
-    </a>
+    </button>
   );
 }
 export default LogOut;

@@ -1,4 +1,5 @@
 import React from "react";
+import databaseScripts from "../../database/databaseScripts";
 import "./LogIn.css";
 function LogIn(props) {
   const onChange =
@@ -7,8 +8,11 @@ function LogIn(props) {
       props.setLoginData({ ...props.loginData, [stateKey]: target.value });
 
   const onSubmit = (event) => {
+    //if (databaseScripts.userExist(props.loginData)) {
     props.setIsLoggedIn(true);
+    props.updatePage("game");
     event.preventDefault();
+    //}
   };
   /*const ErrorMessage = (name) =>
     name === props.errorMessages.name && (
@@ -46,7 +50,9 @@ function LogIn(props) {
           <button type="submit">Log in</button>
         </div>
         <div className="FormBtnLogin">
-          <button type="button">Register</button>
+          <button type="button" onClick={() => props.updatePage("register")}>
+            Register
+          </button>
         </div>
       </form>
     </div>
