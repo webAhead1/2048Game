@@ -10,6 +10,11 @@ function LogIn(props) {
     props.setIsLoggedIn(true);
     event.preventDefault();
   };
+  /*const ErrorMessage = (name) =>
+    name === props.errorMessages.name && (
+      <div className="error">{props.errorMessages.message}</div>
+    );*/
+
   return (
     <div className="login">
       <h1 className="loginTitle">2048 Game!</h1>
@@ -23,6 +28,7 @@ function LogIn(props) {
           placeholder="Email"
           onChange={onChange("email")}
           value={props.loginData.email}
+          required
         />
 
         <label htmlFor="password">Password</label>
@@ -33,7 +39,9 @@ function LogIn(props) {
           placeholder="Password"
           onChange={onChange("password")}
           value={props.loginData.password}
+          required
         />
+
         <div className="FormBtnLogin">
           <button type="submit">Log in</button>
         </div>

@@ -17,7 +17,7 @@ function App() {
   });
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   const [user, setUser] = React.useState({});
-
+  const [errorMessages, setErrorMessages] = React.useState({});
   return (
     <main className="App">
       {isLoggedIn ? (
@@ -46,6 +46,8 @@ function App() {
           loginData={loginData}
           setLoginData={setLoginData}
           setIsLoggedIn={setIsLoggedIn}
+          errorMessages={errorMessages}
+          setErrorMessages={setErrorMessages}
         />
       )}
     </main>
