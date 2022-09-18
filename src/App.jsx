@@ -22,7 +22,7 @@ function App() {
     <main className="App">
       {isLoggedIn ? (
         <div>
-          <Heading />
+          <Heading loginData={loginData} />
 
           <Game
             numbers={numbers}

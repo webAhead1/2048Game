@@ -4,7 +4,7 @@ function LogIn(props) {
   const onChange =
     (stateKey) =>
     ({ target }) =>
-      props.setLoginData({ ...loginData, [stateKey]: target.value });
+      props.setLoginData({ ...props.loginData, [stateKey]: target.value });
 
   const onSubmit = (event) => {
     props.setIsLoggedIn(true);
@@ -12,7 +12,9 @@ function LogIn(props) {
   };
   return (
     <div className="login">
-      <form onSubmit={onSubmit}>
+      <h1 className="loginTitle">2048 Game!</h1>
+      <h2 className="loginTitle">Log In to start the Game</h2>
+      <form className="logInForm" onSubmit={onSubmit}>
         <label htmlFor="email">Email</label>
         <input
           type="email"
@@ -32,8 +34,12 @@ function LogIn(props) {
           onChange={onChange("password")}
           value={props.loginData.password}
         />
-
-        <button type="submit">Log in</button>
+        <div className="FormBtnLogin">
+          <button type="submit">Log in</button>
+        </div>
+        <div className="FormBtnLogin">
+          <button type="button">Register</button>
+        </div>
       </form>
     </div>
   );
